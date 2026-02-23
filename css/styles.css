@@ -536,6 +536,54 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1rem;
 }
 
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feature-list li {
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--pink);
+}
+
+.feature-list li:nth-child(2)::before { color: var(--cyan); }
+.feature-list li:nth-child(3)::before { color: var(--purple); }
+.feature-list li:nth-child(4)::before { color: var(--pink); }
+
+.feature-sublist {
+  list-style: none;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.feature-sublist li {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.feature-sublist li::before {
+  content: '·';
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.feature-sublist li:nth-child(2)::before { color: var(--cyan); }
+.feature-sublist li:nth-child(3)::before { color: var(--pink); }
+.feature-sublist li:nth-child(4)::before { color: var(--purple); }
+
 .project-detail__links {
   display: flex;
   gap: 1.5rem;
