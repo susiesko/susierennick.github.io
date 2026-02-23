@@ -22,3 +22,23 @@ navLinks.querySelectorAll('a').forEach(link => {
     navToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+// ── Scroll reveal ──
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      // Stagger cards in the project grid
+      const delay = entry.target.closest('.projects__grid')
+        ? index * 150
+        : 0;
+      setTimeout(() => {
+        entry.target.classList.add('reveal--visible');
+      }, delay);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
