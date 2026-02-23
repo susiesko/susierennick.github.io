@@ -8,20 +8,22 @@ window.addEventListener('scroll', () => {
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('nav__links--open');
-  navToggle.classList.toggle('nav__toggle--open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-});
-
-// Close menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('nav__links--open');
-    navToggle.classList.remove('nav__toggle--open');
-    navToggle.setAttribute('aria-expanded', 'false');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('nav__links--open');
+    navToggle.classList.toggle('nav__toggle--open');
+    navToggle.setAttribute('aria-expanded', isOpen);
   });
-});
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav__links--open');
+      navToggle.classList.remove('nav__toggle--open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // ── Scroll reveal ──
 const revealElements = document.querySelectorAll('.reveal');
