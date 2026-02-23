@@ -400,3 +400,76 @@ a { color: inherit; text-decoration: none; }
   .projects__grid { grid-template-columns: 1fr; }
   .projects__grid .card:nth-child(n) { margin-top: 0; }
 }
+
+/* ── Contact ── */
+.contact {
+  padding: var(--section-padding);
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 80%, rgba(167, 139, 250, 0.06) 0%, transparent 50%);
+}
+
+.contact__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact__email {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--cyan);
+  margin-bottom: 2rem;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.contact__email::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cyan);
+  transition: width 0.3s;
+}
+
+.contact__email:hover { color: var(--text); }
+.contact__email:hover::after { width: 100%; }
+
+.contact__socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.social:hover { transform: scale(1.15); }
+.social--pink { color: var(--pink); }
+.social--pink:hover { border-color: var(--pink); box-shadow: 0 0 20px rgba(244, 114, 182, 0.2); }
+.social--purple { color: var(--purple); }
+.social--purple:hover { border-color: var(--purple); box-shadow: 0 0 20px rgba(167, 139, 250, 0.2); }
+.social--cyan { color: var(--cyan); }
+.social--cyan:hover { border-color: var(--cyan); box-shadow: 0 0 20px rgba(34, 211, 238, 0.2); }
+
+/* ── Footer ── */
+.footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer__text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
