@@ -588,3 +588,112 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   gap: 1.5rem;
 }
+
+/* ── KohanaMakes ── */
+.kohana {
+  padding: var(--section-padding);
+  padding-top: calc(var(--nav-height) + 4rem);
+  text-align: center;
+  background: radial-gradient(ellipse at 40% 40%, rgba(244, 114, 182, 0.06) 0%, transparent 50%);
+}
+
+.kohana__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.kohana__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--pink), var(--purple), var(--cyan));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 8s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+.kohana__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.kohana__links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.kohana__btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.kohana__btn--etsy {
+  color: var(--orange);
+}
+
+.kohana__btn--etsy:hover {
+  border-color: var(--orange);
+  box-shadow: 0 0 20px rgba(251, 146, 60, 0.15);
+}
+
+.kohana__btn--insta {
+  color: var(--pink);
+}
+
+.kohana__btn--insta:hover {
+  border-color: var(--pink);
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.15);
+}
+
+/* ── Gallery ── */
+.gallery {
+  padding: var(--section-padding);
+}
+
+.gallery__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery__embeds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-bottom: 2rem;
+}
+
+.gallery__embeds .instagram-media {
+  margin: 0 !important;
+}
+
+.gallery__cta {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.gallery__cta a {
+  color: var(--pink);
+  transition: color 0.2s;
+}
+
+.gallery__cta a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
