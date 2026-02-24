@@ -387,6 +387,29 @@ a { color: inherit; text-decoration: none; }
 
 .card__link:hover { color: var(--text); }
 
+/* Coming soon cards */
+.card--coming-soon {
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.card--coming-soon:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+.card--coming-soon .card__title {
+  color: var(--text-muted);
+}
+
+.card--coming-soon .card__desc {
+  margin-bottom: 0;
+}
+
 /* ── Scroll reveal animation ── */
 .reveal {
   opacity: 0;
